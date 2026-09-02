@@ -112,5 +112,5 @@ jobs:
           sha: ${{ needs.init.outputs.pr-sha }}
           repo: ${{ github.repository }}
           s3_location: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}
-          github_token: ${{ secrets.QUALCOMM_LINUX_PAT }}
+          github_token: ${{ github.token }}
           workflow_name: "for IMSDK_UAT_Compilation_PR"
