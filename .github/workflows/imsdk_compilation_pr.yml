@@ -98,6 +98,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [init, build, report-status]
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.init.outputs.pr-sha }}
+          allow-unsafe-pr-checkout: true
+
       - name: Post check run
         id: post-check-run
         if: needs.build.result == 'success'
