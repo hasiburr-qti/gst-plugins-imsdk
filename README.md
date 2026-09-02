@@ -7,6 +7,7 @@ Each QIMSDK plugins in the SDK maps directly to a dedicated hardware accelerator
 ![Architecture](docs/imsdk_plugins.drawio.svg)
 
 ## Compilation Instructions
+# TEST
 
 ### Download and install the toolchain
 
