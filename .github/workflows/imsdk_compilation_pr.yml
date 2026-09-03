@@ -6,6 +6,10 @@ on:
     workflows: ["IMSDK_UAT_Compilation"]
     types: [completed]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
 permissions:
   actions: read
   checks: write
@@ -113,4 +117,4 @@ jobs:
           repo: ${{ github.repository }}
           s3_location: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}
           github_token: ${{ github.token }}
-          workflow_name: "for IMSDK_UAT_Compilation_PR"
+          workflow_name: " for IMSDK_UAT_Compilation_PR"
